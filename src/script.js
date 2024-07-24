@@ -1,3 +1,4 @@
+// Observa elementos da DOM 
 window.onload = function(){
     document.getElementById('submit').addEventListener('click', function(){
         imCalc();
@@ -11,6 +12,7 @@ window.onload = function(){
 
 }
 
+// Roda os testes implementados
 function runTest(){
     test = sortTest();
     document.getElementById('weight').value = test.weight;
@@ -22,6 +24,7 @@ function runTest(){
 
 }
 
+// Escolhe aleatoriamente um teste
 function sortTest(){
     test_n = Math.floor(Math.random() * 5);
 
@@ -42,17 +45,20 @@ function sortTest(){
     }
 }
 
+// Limpa as entradas e o resultado 
 function cleanInput(){
     document.getElementById('result').textContent = '';
     document.getElementById('weight').value = '';
     document.getElementById('height').value = '';
 }
 
+// Calcula o IMC 
 function imc(weight, height){
     var imc_value = Number(weight)/Number(height)**2 
     return imc_value.toFixed(2)
 }
 
+// Classifica o usuário de acordo com o IMC
 function classify(result){
     var imc_class = 'Valor inconsistente.';
     
@@ -72,12 +78,14 @@ function classify(result){
     return imc_class;
 }
 
+// Mostra o resultado na página e no console
 function showResult(imc_value, imc_class){
     document.getElementById('result').textContent = `Seu IMC é: ${imc_value} (${imc_class})`;
     console.log(imc_value);
     console.log(imc_class);
 }
 
+// Função principal 
 function imCalc(){
     weight = document.getElementById('weight');
     height = document.getElementById('height');
