@@ -74,6 +74,8 @@ function classify(result){
 
 function showResult(imc_value, imc_class){
     document.getElementById('result').textContent = `Seu IMC é: ${imc_value} (${imc_class})`;
+    console.log(imc_value);
+    console.log(imc_class);
 }
 
 function imCalc(){
